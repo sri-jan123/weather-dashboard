@@ -25,8 +25,8 @@ router.get('/weather', async function(req,res){
     res.json(weatherData);
 
     }
-    catch(error){
-        if (error.response && error.response.status === 404) {
+    catch(err){
+        if (err.response && err.response.status === 404) {
             res.status(404).json({ error: 'City not found' });
         } else {
             res.status(500).json({ error: 'Something went wrong' });
